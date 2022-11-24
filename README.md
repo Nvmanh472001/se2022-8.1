@@ -25,3 +25,23 @@ Các vòng loop như:
 while this condition is still true, keep doing something until this condition is false
 
 Programming concept thì như nhau nhưng khác nhau về câu lệnh(syntax) và library vì mỗi chủng loại khác nhau sẽ có những loại tài nguyên khác nhau giống như Window và Mac có giao diện khác nhau vì nó có library khác nhau do đó không thể sử dụng Window library mà cho ra giao diện của Mac.
+
+## 2. Lập trình react-native
+### I. Khái niệm lập trình react-native
+React Native là các đoạn code đã được viết sẵn (framework) do công ty công nghệ Facebook phát triển. Các lập trình viên React Native là người sử dụng những framework này để phát triển nên các hệ thống, nền tảng ứng dụng trên các hệ điều hành như IOS và Android. Ngôn ngữ lập trình được sử dụng nhiều nhất là Javascript.
+
+Sự ra đời của React Native đã giải quyết được bài toán về hiệu năng và sự phức tạp khi trước đó người ta phải dùng nhiều loại ngôn ngữ native cho mỗi nền tảng di động. Chính vì thế lập trình React Native sẽ giúp tiết kiệm được phần lớn thời gian và công sức khi thiết kế và xây dựng nên một ứng dụng đa nền tảng. Javascript phù hợp với rất nhiều nền tảng khác nhau. 
+
+**Ưu điểm**
+    - Không phải dùng nhiều native nhờ đó đơn giản hóa quá trình xây dựng nền tảng
+    - Rút ngắn thời gian khi phát triển ứng dụng
+    - Tối thiểu hoá chi phí cho doanh nghiệp
+    - Khả năng tái sử dụng code lên đến 80%
+    - Mang đến trải nghiệm người dùng chất lượng hơn
+    - Không đòi hỏi kiến thức nền quá chuyên sâu, bất kỳ ai đam mê IT cũng có thể học lập trình React Native
+**Nhược điểm**
+    - Mới chỉ hỗ trợ trên 2 nền tảng phổ biến nhất là IOS và Android
+    - Hiệu năng sẽ không bằng những ứng dụng thuần native code
+    - Độ bảo mật còn hạn chế
+    - Không hoàn toàn free, một số thư viện cần trả phí để có thể trải nghiệm
+    - Một vài module có khả năng tùy biến thấp, không thực sự tốt
