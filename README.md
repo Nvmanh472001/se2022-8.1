@@ -33,15 +33,25 @@ React Native là các đoạn code đã được viết sẵn (framework) do cô
 Sự ra đời của React Native đã giải quyết được bài toán về hiệu năng và sự phức tạp khi trước đó người ta phải dùng nhiều loại ngôn ngữ native cho mỗi nền tảng di động. Chính vì thế lập trình React Native sẽ giúp tiết kiệm được phần lớn thời gian và công sức khi thiết kế và xây dựng nên một ứng dụng đa nền tảng. Javascript phù hợp với rất nhiều nền tảng khác nhau. 
 
 **Ưu điểm**
+
     - Không phải dùng nhiều native nhờ đó đơn giản hóa quá trình xây dựng nền tảng
+
     - Rút ngắn thời gian khi phát triển ứng dụng
+
     - Tối thiểu hoá chi phí cho doanh nghiệp
+
     - Khả năng tái sử dụng code lên đến 80%
+
     - Mang đến trải nghiệm người dùng chất lượng hơn
+
     - Không đòi hỏi kiến thức nền quá chuyên sâu, bất kỳ ai đam mê IT cũng có thể học lập trình React Native
 **Nhược điểm**
     - Mới chỉ hỗ trợ trên 2 nền tảng phổ biến nhất là IOS và Android
+
     - Hiệu năng sẽ không bằng những ứng dụng thuần native code
+
     - Độ bảo mật còn hạn chế
+
     - Không hoàn toàn free, một số thư viện cần trả phí để có thể trải nghiệm
+    
     - Một vài module có khả năng tùy biến thấp, không thực sự tốt
