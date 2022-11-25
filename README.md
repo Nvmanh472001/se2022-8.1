@@ -45,7 +45,9 @@ Sự ra đời của React Native đã giải quyết được bài toán về h
     - Mang đến trải nghiệm người dùng chất lượng hơn
 
     - Không đòi hỏi kiến thức nền quá chuyên sâu, bất kỳ ai đam mê IT cũng có thể học lập trình React Native
+
 **Nhược điểm**
+
     - Mới chỉ hỗ trợ trên 2 nền tảng phổ biến nhất là IOS và Android
 
     - Hiệu năng sẽ không bằng những ứng dụng thuần native code
@@ -53,5 +55,42 @@ Sự ra đời của React Native đã giải quyết được bài toán về h
     - Độ bảo mật còn hạn chế
 
     - Không hoàn toàn free, một số thư viện cần trả phí để có thể trải nghiệm
-    
+
     - Một vài module có khả năng tùy biến thấp, không thực sự tốt
+
+### II. Chức năng, cơ chế hoạt động và thư viện
+#### 2.1 Cơ chế hoạt động của React-native
+Framework này được hoạt động dựa trên việc tích hợp hai thread với nhau. Đó chính là Main Thread và JS Thread với hai vai trò riêng biệt:
+
+ - Main Thread: luồng Main Thread đảm nhiệm vai trò cập nhật giao diện người dùng (UI) và xử lý tương tác người dùng.
+
+ - JS Thread: đảm bảo hệ thống hoạt động hiệu quả thông qua việc thực thi và xử lý code Javascript.
+
+Nhìn chung, nguyên lý hoạt động của React Native gần tương tự với React có điều React Native không sử dụng thao tác với DOM và HTML. Thay vào đó, React Native chạy một quá trình xử lý nền với nền tảng gốc. Kết nối Main Thread và JS Thread thông qua một Bridge (cầu nối).
+
+Như vậy 2 luồng này sẽ duy trì giao tiếp nhưng không hề phụ thuộc nhau.
+
+#### 2.2 Các thư viện thường dùng trong React-native
+**FireBase** : 
+
+    - Firebase là một dịch vụ lưu trữ cơ sở dữ liệu thời gian thực hoạt động trên nền tảng đám mây được cung cấp bởi Google nhằm giúp các lập trình phát triển nhanh các ứng dụng bằng cách đơn giản hóa các thao tác với cơ sở dữ liệu.
+
+**Redux** :
+
+    - Redux js là một thư viện Javascript giúp tạo ra thành một lớp quản lý trạng thái của ứng dụng.
+
+    - Redux được xây dựng dựa trên nền tảng tư tưởng của ngôn ngữ Elm và kiến trúc Flux do Facebook giới thiệu.
+
+    - Do vậy Redux thường là bộ đôi kết hợp hoàn hảo với React.
+
+**Flow**
+    - Đây là trình kiểm tra kiểu tĩnh cho JavaScript, được tạo bởi Facebook, xác định các vấn đề trong khi mã hóa. Thư viện nhằm mục đích cải thiện độ chính xác và tốc độ mã hóa. Flow giúp phát triển các ứng dụng lớn, ngăn chặn các xung đột khi nhiều người đang làm việc trên một projecyt.
+
+**React Navigation**
+    - Thư viện này giúp các nhà phát triển dễ dàng thiết lập navigation trong ứng dụng. Nó có một công cụ điều hướng dễ sử dụng dựa trên JavaScript. Thư viện React Navigation hoàn toàn có thể tùy chỉnh và mở rộng.
+
+**Axios**
+
+    - Axios là một client HTTP nhẹ dành cho JavaScript, được xây dựng để gửi các yêu cầu HTTP không đồng bộ đến các điểm cuối REST và thực hiện các hoạt động CRUD. Tóm lại, điều đó có nghĩa là, bạn có thể sử dụng các hàm không đồng bộ và chờ các hàm để viết mã không đồng bộ dễ đọc hơn.
+
+**...**
