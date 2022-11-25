@@ -83,13 +83,15 @@ Như vậy 2 luồng này sẽ duy trì giao tiếp nhưng không hề phụ thu
 
     - Do vậy Redux thường là bộ đôi kết hợp hoàn hảo với React.
 
-**Flow**
+**Flow** :
+
     - Đây là trình kiểm tra kiểu tĩnh cho JavaScript, được tạo bởi Facebook, xác định các vấn đề trong khi mã hóa. Thư viện nhằm mục đích cải thiện độ chính xác và tốc độ mã hóa. Flow giúp phát triển các ứng dụng lớn, ngăn chặn các xung đột khi nhiều người đang làm việc trên một projecyt.
 
-**React Navigation**
+**React Navigation** :
+
     - Thư viện này giúp các nhà phát triển dễ dàng thiết lập navigation trong ứng dụng. Nó có một công cụ điều hướng dễ sử dụng dựa trên JavaScript. Thư viện React Navigation hoàn toàn có thể tùy chỉnh và mở rộng.
 
-**Axios**
+**Axios** :
 
     - Axios là một client HTTP nhẹ dành cho JavaScript, được xây dựng để gửi các yêu cầu HTTP không đồng bộ đến các điểm cuối REST và thực hiện các hoạt động CRUD. Tóm lại, điều đó có nghĩa là, bạn có thể sử dụng các hàm không đồng bộ và chờ các hàm để viết mã không đồng bộ dễ đọc hơn.
 
