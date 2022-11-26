@@ -167,3 +167,67 @@ Như vậy 2 luồng này sẽ duy trì giao tiếp nhưng không hề phụ thu
 **...**
 
 
+## 3. So sánh react-native với các nền tảng khác
+### I. So sánh react-native với native app
+#### 1.1 Lợi ích của React Native so với ứng dụng native:
++ Tái sử dụng 
++ Phát triển ứng dụng hiệu quả 
++ Khả năng tương thích với các ứng dụng của bên thứ ba
++ Giao diện người dùng (UI) đầy đủ chức năng 
+
+Ưu điểm: Nó có một loạt các khả năng để chia sẻ mã giữa các nền tảng khác nhau, điều này hoàn toàn làm cho nó phù hợp nhất cho kinh doanh. Các công ty phát triển ứng dụng Android đang kiếm được lợi nhuận đáng kể với nó.
++ Nó hỗ trợ chia sẻ codebase.
++ Nó là một khung phát triển ứng dụng di động nhanh hơn.
++ Chi phí phát triển ít hơn; do đó nếu bạn eo hẹp về ngân sách, thì đó là một lựa chọn tốt.
+
+Nhược điểm:
++ Phải mất một thời gian dài để gỡ lỗi.
++ Hiệu suất có thể đặt ra câu hỏi vì một số tính năng được phát triển trong các ứng dụng gốc.
++ Nó không hoàn toàn được đo lường tài sản kỹ thuật và những thay đổi nhanh chóng trong các phiên bản của nó cũng đang xảy ra.
+
+#### 1.2 Lợi ích của việc phát triển ứng dụng Native
++ Ứng dụng nhanh và đáng tin cậy
++ Trải nghiệm người dùng tốt nhất (UX) 
++ Bảo mật cao nhất 
++ Hiệu suất ứng dụng tốt hơn
++ Thiết kế bản địa 
++ Tích hợp đầy đủ thiết bị
++ Cộng đồng nhà phát triển khổng lồ 
+
+Ưu điểm:
++ Cung cấp hiệu suất cao và phản ứng nhanh hơn đối với các thiết bị chuyên dụng.
++ Nó có phạm vi tối đa hướng tới một mạng cộng đồng rộng lớn hơn để giải quyết.
++ Khả năng tương thích của phát triển ứng dụng gốc với phần cứng cũng như chức năng phần mềm làm cho hiệu suất của nó vượt trội.
++ Gỡ lỗi là dễ dàng, và nó cũng có ít lỗi hơn.
+
+Nhược điểm:
++ Nó có hai cơ sở mã khác nhau và bạn sẽ phải thuê một nhà phát triển ứng dụng cho cả hai nền tảng HĐH.
++ Một cách tương đối, nó cần có thời gian và nguồn lực đáng kể để phát triển.
+
+### II. So sánh react-native với cross-platform khác (flutter)
+#### 2.1 Flutter
+Ưu điểm:
++ Mạnh về animation, performance app rất cao.
++ Giao tiếp gần như trực tiếp với native
++ Static language nhưng với syntax hiện đại, compiler linh động giữa AOT (for archive, build prod) và JIT (for development, hot reload)
++ Có thể chạy được giả lập mobile ngay trên web, tiện cho development. Các metric measure performance được hỗ trợ sẵn giúp developer kiểm soát tốt performance của app.
++ Có thể dùng để build các bundle/framework gắn và app native để tăng performance.
+
+Nhược điểm
++ Bộ render UI được team author gần như viết lại, không liên quan tới UI có sẵn của Framework native, dẫn đến memory sử dụng khá nhiều.
++ Phải học thêm ngôn ngữ DART, bloc pattern, DART Streaming
++ Dù đã release 1.0 chính thức, tuy nhiên còn khá mới. Một số plugin rất quan trọng như Google Map vẫn còn đang phát triển, chưa stable.
++ Là con cưng của Google, tuy nhiên hãng dính nhìu phốt với thói quen “quăng con giữa chợ” nên cần cân nhắc.
+
+#### 2.2 React-Native
+Ưu điểm
++ Thiên về development/hotfix nhanh (hot reload, bundle injection)
++ Sử dụng JS (quen thuộc với nhiều developer) và có thể share business logic codebase với frontend (js).
++ Back bởi Facebook, họ dùng cho product của họ hàng ngày nên developer hưởng lợi khá nhiều từ đây.
++ Hiện tại đã rất nhiều thư viện, gần như đã rất đầy đủ cho các nhu cầu app thông dụng.
+
+Nhược điểm
++ Giao tiếp với native thông qua các bridge, dễ bị bottleneck nếu không được kiểm soát tốt.
++ Dùng JS nên mang theo các đặc điểm của JS: rất dễ làm nhưng cũng dễ sai, dẫn tới khó maintain về sau.
++ HIệu năng animation là điểm yếu của RN, muốn làm tốt phải làm từ native, tầng js chỉ call vào, setup views. Tuy nhiên với các interactive animation thì rất đau khổ.
++ Không thích hợp cho các app cần năng lực tính toán cao (hash, crypto, etc).
