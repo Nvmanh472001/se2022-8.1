@@ -25,6 +25,75 @@ Các vòng loop như:
 while this condition is still true, keep doing something until this condition is false
 
 Programming concept thì như nhau nhưng khác nhau về câu lệnh(syntax) và library vì mỗi chủng loại khác nhau sẽ có những loại tài nguyên khác nhau giống như Window và Mac có giao diện khác nhau vì nó có library khác nhau do đó không thể sử dụng Window library mà cho ra giao diện của Mac.
+### II. Xu hướng phát triển của lập trình di động
+Với 2/3 dân số thế giới sử dụng các thiết bị di động hằng ngày thì đây là cơ hội không thể tốt hơn để các nhà kinh doanh có thể giới thiệu, kinh doanh các sản phẩm của mình một cách rộng rãi hơn, tiếp cận được nhiều đối tượng người dùng hơn.
+
+Kinh doanh trên App Mobile đang là xu hướng ở nhiều quốc gia. Mạng 5G sớm đưa vào hoạt động trong thời gian tới sẽ càng thúc đẩy mạnh mẽ các nền tảng trên Smartphone phát triển. Đặc biệt là hoạt động ở mảng thương mại điện tử.
+
+Thương mại điện tử có tốc độ phát tiển cực kì nhanh chóng, đặc biệt là ở các nuwosc đang phát triển. Có thể kể đến các app thương mại điện tử lớn như Shoppe, Lazada, Tiki, Shopee, Sendo, Adayroi, Sendo, Zalora, ... đều đang có mặt trên thị trường Việt Nam và đang phát triển mạnh mẽ. Đi kèm với các ứng dụng thương mại điện tử là các ứng dụng thanh toán trực tuyến để tối ưu hóa trải nghiệm của người dùng.
+
+Bởi vật trong tương lai, các ứng dụng trên di động sẽ là một trong những nền tảng quan trọng để các doanh nghiệp có thể kinh doanh, tiếp cận được nhiều khách hàng hơn, và công nghệ lập trình di động sẽ là một trong những công nghệ quan trọng để các doanh nghiệp có thể phát triển.
+
+### III. Các công nghệ lập trình di động
+Các công nghệ lập trình di động hiện nay có rất nhiều, nhưng mình sẽ chỉ nêu ra một số công nghệ lập trình di động phổ biến nhất hiện nay.
+#### a. Đa nền tảng
+Đa nền tảng là một công nghệ lập trình di động được sử dụng để xây dựng các ứng dụng di động trên nhiều nền tảng khác nhau. Nó được sử dụng để xây dựng các ứng dụng di động trên nền tảng iOS, Android, Windows, macOS, Linux, và nhiều nền tảng khác. Nó cũng có thể được sử dụng để xây dựng các ứng dụng web bằng cách sử dụng các công nghệ web khác nhau.
+#### b. React Native
+React Native là một framework dùng để xây dựng các ứng dụng di động trên nền tảng iOS và Android. Nó được phát triển bởi Facebook và được sử dụng để xây dựng các ứng dụng di động cho Facebook, Instagram, Skype, Pinterest, Walmart, Tesla, Uber Eats, và nhiều ứng dụng khác.
+
+React Native được viết bằng sự kết hợp của JavaScript và JXL. Framework có khả năng thao tác với cả hai thread là main thread và JS thread
+ - Main thread: là thread chính của ứng dụng, nó được sử dụng để xử lý các tác vụ như: vẽ giao diện, xử lý các sự kiện, xử lý các tác vụ đồng bộ, ...
+ - JS thread: thực thi và xử lý các tác vụ của JavaScript, nó được sử dụng để xử lý các tác vụ bất đồng bộ, xử lý các tác vụ liên quan đến các API, ...
+
+React Native không sử dụng thao tác với DOM và HTML mà chạy quá trình xử lí nền với nền tảng gốc (native)
+
+React Native sử dụng Bridge để kết nối giữa 2 thread là main thread và JS thread. Bridge sẽ chuyển các tác vụ từ JS thread sang main thread và ngược lại.
+
+*Ưu nhược điểm*
+ - Ưu điểm:
+   - Có thể sử dụng được cho cả 2 nền tảng iOS và Android
+   - Tối ưu thời gian phát triển ứng dụng
+   - Ổn định
+   - Tiết kiệm chi phí phát triển ứng dụng
+  - Nhược điểm
+    - Yếu cầu native code
+    - Hiệu năng chậm hơn so với native code
+    - Bảo mật không tốt
+  
+#### c. Flutter
+Flutter là một framework dùng để xây dựng các ứng dụng di động trên nền tảng iOS và Android trong thời gian ngắn. Nó được phát triển bởi Google và được sử dụng để xây dựng các ứng dụng di động cho Google Ads, Google Assistant, Google I/O, Google Play, Google Search, Google Translate, và nhiều ứng dụng khác.
+
+Flutter framework được viết bằng ngôn ngữ Dart. Flutter có 2 thành phần quan trọng:
+ - Một SDK (Software Development Kit) cung cấp cho người dùng các công cụ để xây dựng ứng dụng của mình, bao gồm cả trình biên dịch mã thành các mã gốc  cho cả 2 hệ điều hành iOS và Android.
+ - Một Framework giúp người dùng tập hợp các thành phần của giao diện. Các mã code trên Framework có thể được tái sử dụng, giúp người dùng tối ưu thời gian phát triển ứng dụng.
+
+*Ưu nhược điểm*
+ - Ưu điểm
+   - Phát triển nhanh chóng các tính năng, ứng dụng: Hot reload giúp nhanh chóng thay đổi code và xem kết quả trên thiết bị mà không cần phải build lại ứng dụng, tiết kiệm thời gian fix
+   - UI đẹp và linh hoạt: nhiều thành phần xây dựng giao diện đẹp măt như Material Design, Cupertino, ...
+   - Truy cập các tính năng và SDK na tive: Các widget của fluter kết hợp các sự khác biệt của các nền tảng ví dụ như scrolling, navigation, icons, font để cung cấp một hiệu năng tốt nhất tới iOS và Android.
+- Nhược điểm
+  - Chưa phổ biến
+  - Chưa có nhiều thư viện hỗ trợ
+  - Chưa có nhiều tài liệu hướng dẫn
+  - Ứng dụng tốn khá nhiều dung lượng
+
+
+#### d. Xamarin
+Xamarin là một framework dùng để xây dựng các ứng dụng di động trên nền tảng iOS và Android. Xamarin được xây dựng vào tháng 5 năm 2011 bởi Mono Project. Dựa trên ngôn ngữ C# và .NET Framework, Xamarin cho phép người dùng viết code bằng C# và sử dụng các thư viện .NET Framework để xây dựng ứng dụng di động cho cả 2 nền tảng iOS và Android. Xamarin là 1 nền tảng lập trình di động cross-platform.
+
+Đoạn code của Xamarin có thể chạy trên cả Android và IOS. Bằng cách sử dụng ngôn ngữ C#, chuyển đổi toàn bộ code và SDK của Android và IOS thành C#.. Để sử dụng trên windows cần cài đặt visual studio community.
+
+*Ưu nhược điểm*
+ - Ưu điểm
+   - Đa nền tảng: Có thể thử dụng trên đa nền tảng khác nhau nhờ sử dụng C#, tái sử dụng code giúp tiết kiệm thời gian và chi phí
+   - Số liệu performances gần với native: performance của Xamarin liên tục được cải thiện để phù hợp hoàn toàn với tiêu chuẩn của lập trình native. Ngoài ra, nền tảng Xamarin cung cấp thêm các giải pháp để testing và theo dõi hoạt động của ứng dụng. Xamarin Test Cloud kết hợp với công cụ Xamarin Test Recorder cho phép bạn chạy các UI test tự động và xác định các vấn đề về performance trước khi ứng dụng release.
+   - Chia sẻ code ở mọi nền tảng và tái sử udjng code để tiết kiệm thời gian và hiệu suất.
+   - Nhiều thư viện hỗ trợ làm ứng dụng cực nhanh có sẵn: Component Xamarin cung cấp đến hàng ngàn UI controls tùy chỉnh, các charts, biểu đồ, themes đa dạng và các chức năng mạnh mẽ khác có thể được thêm vào ứng dụng chỉ với vài cú click. Điều này bao gồm quá trình xử lý payment built-in (như Stripe chẳng hạn), tích hợp Beacons và các thiết bị di động, các services notification box push, giải pháp lưu trữ đám mây,...
+  - Nhược điểm:
+    - Cộng đồng của công nghệ xamarin này rất nhỏ. Bởi vậy khi có các bản cập nhật mới của Android hay IOS thì phải mất một khoảng thờid gian mới có những bản update mới cho xamarin.
+    - Giới hạn truy cập vào thư viện mã nguồn mở: Native development giúp thói quen sử dụng công nghệ mã nguồn mở trở nên quen thuộc, rộng rãi hơn. Với Xamarin, cả developer đều phải sử dụng duy nhất môt component được cung cấp bởi Xamarin và một số mã nguồn mở .Net.
+    - Apps thực hiện chậm hơn và yêu cầu nhiều dung lượng hơn trên thiết bị. Ứng dụng Xamarin lớn hơn, nặng hơn so với ứng dụng native. So sánh với ứng dụng native nó chiếm nhiều hơn vài Mb so với Java/Objective C tương ứng. kích thước của một ứng dụng code bằng xamarin là 5Mb, trong khi code bằng Objective C chỉ chiếm 200 Kb. Càng sử dụng nhiều API, càng nhiều lưu trữ bị chiếm trên thiết bị.
 
 ## 2. Lập trình react-native
 ### I. Khái niệm lập trình react-native
@@ -59,7 +128,7 @@ Sự ra đời của React Native đã giải quyết được bài toán về h
     - Một vài module có khả năng tùy biến thấp, không thực sự tốt
 
 ### II. Chức năng, cơ chế hoạt động và thư viện
-#### 2.1 Cơ chế hoạt động của React-native
+#### 2. Cơ chế hoạt động của React-native
 Framework này được hoạt động dựa trên việc tích hợp hai thread với nhau. Đó chính là Main Thread và JS Thread với hai vai trò riêng biệt:
 
  - Main Thread: luồng Main Thread đảm nhiệm vai trò cập nhật giao diện người dùng (UI) và xử lý tương tác người dùng.
@@ -96,3 +165,5 @@ Như vậy 2 luồng này sẽ duy trì giao tiếp nhưng không hề phụ thu
     - Axios là một client HTTP nhẹ dành cho JavaScript, được xây dựng để gửi các yêu cầu HTTP không đồng bộ đến các điểm cuối REST và thực hiện các hoạt động CRUD. Tóm lại, điều đó có nghĩa là, bạn có thể sử dụng các hàm không đồng bộ và chờ các hàm để viết mã không đồng bộ dễ đọc hơn.
 
 **...**
+
+
