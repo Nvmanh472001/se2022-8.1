@@ -20,6 +20,6 @@
 `php artisan db:seed --class=CreateRoleUserSeeder`
 
 Done
->email: admin@mail.com
+>email: admin@gmail.com
 
 >password: Admin123
