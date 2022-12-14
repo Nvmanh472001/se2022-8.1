@@ -1,0 +1,104 @@
+@extends('admins.layouts.admin')
+@section('title')
+ <title>Danh mục sản phẩm</title>
+@endsection
+@section('content')
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    @include('admins.partials.content-header',['name' => 'Danh mục sản phẩm','key' => ''])
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+        @if (session('msg'))
+    <div class ='alert alert-success'>{{session('msg')}}</div>
+    @endif
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{{ route('admins.products.create'); }}" class="btn btn-success float-right m-2">Thêm sản phẩm</a>
+            </div>
+            <div class="col-md-12">
+                <table class="center table">
+
+                    <thead>
+                      <tr >
+                        <th class='text-center' scope="col">STT</th>
+                        <th class='text-center' scope="col">Ảnh</th>
+                        <th class='text-center' width='30%' scope="col">Tên sản phẩm</th>
+                        <th class='text-center' width='10%' scope="col">Danh mục</th>
+                        <th class='text-center' width='5%' scope="col">Số lượng</th>
+                        <th class='text-center' width='5%' scope="col">Giá</th>
+                        <th class='text-center' width = '10%' scope="col">Ngày tạo</th>
+                        <th class='text-center' width = '10%' scope="col">Ngày sửa đổi</th>
+                        <th class='text-center' scope="col">Hành động</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        
+            
+                        @if(!empty($product))
+                            @foreach($product as$key =>$value)
+                            
+                      <tr>
+                        <th scope="row">{{$key+1}}</th>
+                        <td>{{$value->feature_image}}</td>
+                        <td>
+                          <b><a href="#"> {{$value->name}}</a></b>
+                          <br/>
+                         
+                        {{$value->description}}</td>
+                        <td class='text-center'>{{$value->category_id}}</td>
+                        <td class='text-center'>{{$value->quantity}}</td>
+                        <td class='text-center'>{{$value->price}}</td>
+                        
+                        {{-- <td>@if($value->parent_id == 0)
+                          Danh mục cha
+                         @else 
+                         @foreach($product as$keys =>$values)
+                          @if($value->parent_id == $values->id)
+                            {{$values->name}}
+                          @endif
+                          @endforeach
+
+                        @endif</td> --}}
+                        <td class='text-center'>{{$value->created_at}}</td>
+                        <td class='text-center'>{{$value->updated_at}}</td>
+                        <td>
+                            <a href="{{ route('admins.products.edit',['id'=>$value->id]) }}" class="btn btn-secondary">Sửa</a>
+                            {{-- <a href="{{ route('products.delete',['id'=>$value->id])}}" class="btn btn-danger">Xóa</a> --}}
+                            <form class="d-inline" onsubmit="return confirm('Bạn chắc chắn muốn xóa danh mục này?')" method="POST" action="{{ url('products/delete/'.$value->id) }}">
+                              @method('delete')
+                              @csrf
+                              <button class="btn btn-danger">Xóa</button>
+                            </form>
+                        </td>
+                      </tr>
+                      
+                      @endforeach
+                     
+                      
+                      @else
+                      <tr>
+                        <td colspan="4">Không có sẵn sản phẩm</td>
+                      </tr>
+                      
+                      @endif
+                      
+                    </tbody>
+                   
+                  </table>
+                  
+            </div>
+     
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+@endsection
+
+
+
