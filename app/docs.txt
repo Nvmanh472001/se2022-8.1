@@ -1,1 +1,0 @@
-Replace code React Native to here!
