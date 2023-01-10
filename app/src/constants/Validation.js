@@ -11,3 +11,10 @@ const validationLogin = Yup.object().shape({
 
 export const loginOptions = { resolver: yupResolver(validationLogin) };
 
+const validationEmail = Yup.object().shape({
+    email: Yup.string()
+        .required('Email is required')
+        .email('Must be valid email'),
+});
+
+export const emailOptions = { resolver: yupResolver(validationEmail) };
