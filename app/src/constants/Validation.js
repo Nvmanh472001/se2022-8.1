@@ -11,6 +11,23 @@ const validationLogin = Yup.object().shape({
 
 export const loginOptions = { resolver: yupResolver(validationLogin) };
 
+const validationRegist = Yup.object().shape({
+    username: Yup.string()
+        .required('Username is required'),
+    email: Yup.string()
+        .required('Email is required')
+        .email('Must be valid email'),
+    password: Yup.string()
+        .required('Password is required')
+        .min(6, 'Password must be at least 6 characters'),
+    confirmPassword: Yup.string()
+        .required('Confirm Password is required')
+        .oneOf([Yup.ref('password')], 'Passwords must match')
+
+});
+
+export const registOptions = { resolver: yupResolver(validationRegist) };
+
 const validationEmail = Yup.object().shape({
     email: Yup.string()
         .required('Email is required')
