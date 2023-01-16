@@ -12,11 +12,76 @@ import Navbar from '../../components/navbar';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import productApi from '../../api/productApi';
 import Ionicon from 'react-native-vector-icons/Ionicons';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/cart/cartSlice';
 import Feather from 'react-native-vector-icons/Feather'
+import BottomPoup from '../../components/bottom_popup';
 import GLOBALS from '../../constants/GLOBALS';
 
 const Product = ({ route, navigation }) => {
     const { id } = route.params
+    const dispatch = useDispatch()
+
+    const popupRef = useRef(null)
+
+    const [detail, setDetail] = useState(null)
+    const [nameButton, setNameButton] = useState(null)
+    const [type, setType] = useState(null)
+
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const res = await productApi.getProduct(id)
+                setDetail(res)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getData()
+    }, [])
+
+    const addWhish = () => {
+        setDetail({ ...detail, isLiked: !detail.isLiked })
+    }
+
+    const onShowPopup = (type) => {
+        setType(type)
+        switch (type) {
+            case 0:
+                setNameButton('Add To Cart')
+                break;
+
+            default:
+                setNameButton('Buy')
+                break;
+        }
+        popupRef.current.show()
+    }
+
+    const onClosePopup = () => {
+        popupRef.current.close()
+    }
+
+    const addCart = (item) => {
+        dispatch(addToCart(item))
+    }
+
+    const control = (item) => {
+        switch (type) {
+            case 0:
+                addCart(item)
+                break;
+
+            default:
+                navigation.navigate('Payment',
+                    {
+                        items: [item],
+                        total: Math.round((item.quantity * item.price) * 100) / 100,
+                        type: 1
+                    })
+                break;
+        }
+    }
 
     return (
         detail &&
@@ -65,6 +130,14 @@ const Product = ({ route, navigation }) => {
                     <Text style={styles.buttonText}>Buy</Text>
                 </TouchableOpacity>
             </View>
+
+            <BottomPoup
+                ref={popupRef}
+                button={nameButton}
+                onTouchOutside={onClosePopup}
+                detail={detail}
+                getItem={item => control(item)}
+            />
         </View>
     );
 };
