@@ -1,0 +1,42 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+  - name: auth-service
+    host: auth
+    port: 9001
+    protocol: http
+    routes:
+      - name: auth-route
+        paths:
+          - /auth
+  - name: post-service
+    host: post
+    port: 9002
+    protocol: http
+    routes:
+      - name: post-route
+        paths:
+          - /post
+  - name: files-service
+    host: files
+    port: 9003
+    protocol: http
+    routes:
+      - name: files-route
+        paths:
+          - /files
+  - name: notification-service
+    host: notification
+    port: 9004
+    protocol: http
+    routes:
+      - name: notification-route
+        paths:
+          - /notification
+plugins:
+  - name: rate-limiting
+    config:
+      second: 5
+      hour: 10000
+      policy: local
