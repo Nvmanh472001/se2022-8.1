@@ -7,7 +7,11 @@ const images = {
     banner3: require("./images/banner3.jpg"),
     chair1: require("./images/chair1.png"),
     chair2: require("./images/chair2.png"),
-    sofa: require("./images/sofa.png")
+    sofa: require("./images/sofa.png"),
+    empty: require("./images/empty.png"),
+    success: require("./images/success.png"),
+    error: require("./images/error.png"),
+    delivering: require("./images/delivering.png")
 }
 
 const icons = {

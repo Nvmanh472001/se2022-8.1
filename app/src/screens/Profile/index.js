@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../../components/layout/Layout';
 import { launchImageLibrary } from 'react-native-image-picker';
-import { TouchableOpacity, Text, View, StyleSheet, Image, Modal, TouchableWithoutFeedback } from 'react-native';
+import { TouchableOpacity, Text, View, StyleSheet, Image } from 'react-native';
 import GLOBALS from '../../constants/GLOBALS';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Entypo from 'react-native-vector-icons/Entypo'
