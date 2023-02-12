@@ -1,27 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList, TouchableWithoutFeedback } from 'react-native';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import GLOBALS from '../../constants/GLOBALS';
-import productApi from '../../api/productApi';
 import Feather from 'react-native-vector-icons/Feather'
 
-const ListSearch = () => {
+const ListSearch = ({ listData }) => {
     const navigation = useNavigation()
-
-    const [listData, setListData] = useState(null)
-
-    useEffect(() => {
-        const getData = async () => {
-            try {
-                const res = await productApi.getAllProduct()
-                setListData(res)
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        getData()
-    }, [])
 
     const ColItem = ({ item, index }) => {
         return (
