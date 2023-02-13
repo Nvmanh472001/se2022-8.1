@@ -6,34 +6,35 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id           Int      @id @default(autoincrement())
-  email        String   @unique
-  first_name   String
-  last_name    String
-  password     String
-  role         Role     @default(USER)
-  created_at   DateTime @default(now())
-  updated_at   DateTime @updatedAt
-  profile      String?
-  phone        String?
-  device_token String?  @unique
-  tokens       Token[]
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  email           String   @unique
+  first_name      String
+  last_name       String
+  password        String
+  role            Role     @default(USER)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+  profile         String?
+  avatar_photo    String?
+  phone           String?
+  device_token    String?  @unique
+  tokens          Token[]
 }
 
 model Token {
-  id         Int         @id @default(autoincrement())
+  id         String      @id @default(auto()) @map("_id") @db.ObjectId
   token      String      @unique
   status     TokenStatus @default(ISSUED)
   created_at DateTime    @default(now())
   updated_at DateTime    @updatedAt
   expired_at DateTime?
   user       User        @relation(fields: [user_id], references: [id])
-  user_id    Int
+  user_id    String      @db.ObjectId
 }
 
 enum TokenStatus {
