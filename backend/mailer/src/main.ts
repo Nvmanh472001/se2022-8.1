@@ -1,12 +1,12 @@
-import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
 import { ConfigService } from './config/config.service';
+import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
-  const configService = new ConfigService();
   const logger = new Logger();
+  const configService = new ConfigService();
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
     AppModule,
     {
@@ -20,6 +20,6 @@ async function bootstrap() {
     },
   );
   await app.listen();
-  logger.log('🚀 Mailer service started');
+  logger.log('🚀 Mailer service started successfully');
 }
 bootstrap();

@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from './config/config.module';
 import { BullModule } from '@nestjs/bull';
 import { ConfigService } from './config/config.service';
-import { TaskProcessor } from './tasks/task.processor';
+import { TaskProcessor } from './task.processor';
 
 @Module({
   imports: [
@@ -15,6 +15,7 @@ import { TaskProcessor } from './tasks/task.processor';
         redis: {
           host: configService.get('redis_host'),
           port: configService.get('redis_port'),
+          password: configService.get('redis_password'),
         },
       }),
       inject: [ConfigService],
