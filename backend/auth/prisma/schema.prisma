@@ -2,44 +2,38 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider      = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
-  email           String   @unique
-  first_name      String
-  last_name       String
-  password        String
-  role            Role     @default(USER)
-  created_at      DateTime @default(now())
-  updated_at      DateTime @updatedAt
-  profile         String?
-  avatar_photo    String?
-  phone           String?
-  device_token    String?  @unique
-  tokens          Token[]
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  first_name   String
+  last_name    String
+  password     String
+  phone        String?
+  role         Role      @default(USER)
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+  deleted_at   DateTime?
+  is_deleted   Boolean?
+  profile      String?
+  device_token String?   @unique
+  tokens       Token[]
 }
 
 model Token {
-  id         String      @id @default(auto()) @map("_id") @db.ObjectId
-  token      String      @unique
-  status     TokenStatus @default(ISSUED)
-  created_at DateTime    @default(now())
-  updated_at DateTime    @updatedAt
-  expired_at DateTime?
-  user       User        @relation(fields: [user_id], references: [id])
-  user_id    String      @db.ObjectId
-}
-
-enum TokenStatus {
-  ISSUED
-  EXPIRED
+  id         Int      @id @default(autoincrement())
+  token      String   @unique
+  expire     DateTime
+  created_at DateTime @default(now())
+  user       User?    @relation(fields: [user_id], references: [id])
+  user_id    Int?
 }
 
 enum Role {
