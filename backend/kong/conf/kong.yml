@@ -11,14 +11,14 @@ services:
         paths:
           - "/auth"
         strip_path: true
-  - name: post_service
+  - name: product_service
     host: post
     port: 9002
     protocol: http
     routes:
-      - name: post_route
+      - name: product_route
         paths:
-          - "/post"
+          - "/product"
         strip_path: true
         plugins:
           - name: jwt
