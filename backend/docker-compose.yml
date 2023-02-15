@@ -20,20 +20,20 @@ services:
         fluentd-async: "true"
         fluentd-address: localhost:24224
         tag: auth-service
-  post:
+  products:
     build:
-      context: ./post
+      context: ./products
       dockerfile: Dockerfile
     restart: on-failure
     ports:
       - "9002:9002"
     env_file:
-      - ./post/.env.dev
+      - ./products/.env.dev
     networks:
       - backend
     volumes:
-      - ./post:/app/post
-      - /app/post/node_modules
+      - ./products:/app/products
+      - /app/products/node_modules
     logging:
       driver: fluentd
       options:
