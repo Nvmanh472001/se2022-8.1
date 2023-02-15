@@ -12,7 +12,7 @@ services:
           - "/auth"
         strip_path: true
   - name: product_service
-    host: post
+    host: product
     port: 9002
     protocol: http
     routes:
