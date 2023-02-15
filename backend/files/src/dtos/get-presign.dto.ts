@@ -3,7 +3,7 @@ import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
 
 enum FileModuleType {
   user_profile = 'Profile',
-  post_picture = 'Posts',
+  product_image = 'Product',
 }
 
 export class GetPresignDto {
@@ -14,7 +14,7 @@ export class GetPresignDto {
 
   @ApiProperty()
   @IsEnum(FileModuleType, {
-    message: '[Profile, Posts] type is required',
+    message: '[Profile, Product] type is required',
   })
   @IsNotEmpty({ message: 'type is required.' })
   type: FileModuleType;
