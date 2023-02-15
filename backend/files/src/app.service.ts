@@ -28,6 +28,7 @@ export class AppService {
         Key: key,
         Expires: Number(this.configService.get('presignExpire')),
       });
+
       const file = new this.fileModel({
         name: params.name,
         type: params.type,
