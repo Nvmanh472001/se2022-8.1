@@ -13,6 +13,7 @@ lerna-debug.log*
 # env file
 .env
 .prod.env
+.env.*
 
 
 ### OS
